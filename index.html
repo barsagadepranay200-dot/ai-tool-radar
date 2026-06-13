@@ -1,21 +1,59 @@
-<input id="prompt" placeholder="Enter thumbnail prompt">
-<button onclick="generate()">Generate</button>
+<header>
+<h1>AI Tool Radar</h1>
+<p>Discover the Best AI Tools & Automation Solutions</p>
+</header>
 
-<img id="result" width="512">
+<nav>
+<a href="#">Home</a>
+<a href="#">AI Tools</a>
+<a href="#">Reviews</a>
+<a href="#">Tutorials</a>
+<a href="#">Contact</a>
+</nav>
 
-<script>
-async function generate() {
-  const prompt = document.getElementById("prompt").value;
+<section class="hero">
+<h1>Explore Powerful AI Tools</h1>
+<p>
+Find the latest AI tools, automation software,
+productivity apps, and detailed tutorials.
+</p>
+</section>
 
-  const res = await fetch("/generate", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ prompt })
-  });
+<section class="tools">
+<h2>Featured AI Tools</h2>
 
-  const data = await res.json();
-  document.getElementById("result").src = data.imageUrl;
-}
-</script>
+<div class="card">
+<h3>ChatGPT</h3>
+<p>Create content, code, research, and automate daily tasks.</p>
+</div>
+
+<div class="card">
+<h3>Claude</h3>
+<p>Advanced AI assistant for writing, analysis, and business workflows.</p>
+</div>
+
+<div class="card">
+<h3>Gemini</h3>
+<p>Google AI platform for productivity, research, and creativity.</p>
+</div>
+
+<div class="card">
+<h3>Perplexity AI</h3>
+<p>AI-powered search engine with real-time information.</p>
+</div>
+
+<div class="card">
+<h3>Midjourney</h3>
+<p>Create professional AI-generated images and artwork.</p>
+</div>
+
+<div class="card">
+<h3>Notion AI</h3>
+<p>Boost productivity with AI-powered notes and workflows.</p>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 AI Tool Radar | AI Tools • Automation • Productivity</p>
+</footer>
