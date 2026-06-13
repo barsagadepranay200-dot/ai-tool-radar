@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>AI Wealth Hub</title>
-</head>
-<body>
+<input id="prompt" placeholder="Enter thumbnail prompt">
+<button onclick="generate()">Generate</button>
 
-<h1>Welcome to AI Wealth Hub 🚀</h1>
+<img id="result" width="512">
 
-<p>Discover AI Tools and Smart Ways to Build Wealth.</p>
+<script>
+async function generate() {
+  const prompt = document.getElementById("prompt").value;
 
-</body>
-</html>
+  const res = await fetch("/generate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ prompt })
+  });
+
+  const data = await res.json();
+  document.getElementById("result").src = data.imageUrl;
+}
+</script>
